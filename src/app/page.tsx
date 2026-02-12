@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ShieldCheck, Download, AlertTriangle, FileText, Lock, CheckCircle2, ChevronRight } from "lucide-react"
+import { ArrowRight, ShieldCheck, Download, AlertTriangle, FileText, Lock, CheckCircle2, ChevronRight, Calculator, List, FileEdit } from "lucide-react"
 
 export default function LandingPage() {
   return (
@@ -20,13 +20,13 @@ export default function LandingPage() {
         </nav>
       </header>
 
-      <main className="flex-1">
+      <main className="flex-1 w-full flex flex-col items-center">
         {/* Hero Section */}
-        <section className="relative w-full py-20 md:py-32 lg:py-40 overflow-hidden">
+        <section className="relative w-full py-20 md:py-32 lg:py-40 overflow-hidden flex flex-col items-center">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-950 dark:to-slate-900 -z-10" />
           <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] bg-blue-400/10 rounded-full blur-3xl animate-pulse" />
 
-          <div className="container px-4 md:px-6 relative">
+          <div className="container px-4 md:px-6 relative flex flex-col items-center">
             <div className="flex flex-col items-center space-y-8 text-center max-w-4xl mx-auto">
               <div className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm font-medium text-blue-800 dark:border-blue-800 dark:bg-blue-950/50 dark:text-blue-200 backdrop-blur-sm">
                 <span className="flex h-2 w-2 rounded-full bg-blue-600 mr-2 animate-ping" />
@@ -37,11 +37,11 @@ export default function LandingPage() {
                 Ta kontroll over <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">økonomien din</span>
               </h1>
 
-              <p className="max-w-[700px] text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="max-w-[700px] text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed mx-auto">
                 Veien til gjeldsordning kan virke overveldende. Vi hjelper deg å strukturere gjeld, budsjett og søknad – helt uten at dine data forlater nettleseren.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 min-w-[200px]">
+              <div className="flex flex-col sm:flex-row gap-4 min-w-[200px] justify-center">
                 <Link href="/steg/1">
                   <Button size="lg" className="h-14 px-8 text-lg rounded-full shadow-lg shadow-blue-600/20 hover:shadow-blue-600/30 transition-all w-full sm:w-auto">
                     Start veilederen <ArrowRight className="ml-2 h-5 w-5" />
@@ -69,61 +69,98 @@ export default function LandingPage() {
         </section>
 
         {/* Feature Grid */}
-        <section id="hvordan" className="w-full py-20 bg-white dark:bg-slate-950">
-          <div className="container px-4 md:px-6">
-            <div className="text-center mb-16">
+        <section id="hvordan" className="w-full py-20 bg-white dark:bg-slate-950 flex flex-col items-center">
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="text-center mb-16 max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900 dark:text-white mb-4">
                 Slik fungerer det
               </h2>
               <p className="text-lg text-slate-600 dark:text-slate-400">
-                En steg-for-steg prosess designet for å gjøre søknaden overkommelig.
+                En steg-for-steg prosess designet for å gjøre søknaden overkommelig. Vi leder deg gjennom hele prosessen.
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-3">
-              {/* Card 1 */}
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+              {/* Step 1 */}
               <div className="group relative overflow-hidden rounded-2xl border bg-slate-50 p-8 hover:shadow-xl transition-all duration-300 dark:bg-slate-900 dark:border-slate-800">
                 <div className="absolute top-0 right-0 -mr-4 -mt-4 h-24 w-24 rounded-full bg-blue-500/10 blur-2xl transition-all group-hover:bg-blue-500/20" />
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 text-white shadow-lg shadow-blue-600/20">
                   <span className="font-bold text-xl">1</span>
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white">Oversikt & Krav</h3>
+                <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white">Forstå & Kvalifiser</h3>
                 <p className="text-slate-600 dark:text-slate-400">
-                  Få en enkel innføring i hva gjeldsordning er, og sjekk om du oppfyller de grunnleggende kravene før du starter.
+                  Lær om vilkårene for gjeldsordning og ta en rask sjekk for å se om dette er riktig løsning for deg.
                 </p>
               </div>
 
-              {/* Card 2 */}
+              {/* Step 2 */}
               <div className="group relative overflow-hidden rounded-2xl border bg-slate-50 p-8 hover:shadow-xl transition-all duration-300 dark:bg-slate-900 dark:border-slate-800">
                 <div className="absolute top-0 right-0 -mr-4 -mt-4 h-24 w-24 rounded-full bg-indigo-500/10 blur-2xl transition-all group-hover:bg-indigo-500/20" />
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-600 text-white shadow-lg shadow-indigo-600/20">
                   <span className="font-bold text-xl">2</span>
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white">Kartlegging</h3>
+                <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white">Kartlegg Gjeld</h3>
                 <p className="text-slate-600 dark:text-slate-400">
-                  Legg inn kreditorer og budsjettposter i et trygt system. Ingenting sendes over nettet, alt blir på din maskin.
+                  Få full oversikt. Legg inn alle dine kreditorer i en ryddig liste slik at ingenting blir glemt.
                 </p>
               </div>
 
-              {/* Card 3 */}
+              {/* Step 3 */}
+              <div className="group relative overflow-hidden rounded-2xl border bg-slate-50 p-8 hover:shadow-xl transition-all duration-300 dark:bg-slate-900 dark:border-slate-800">
+                <div className="absolute top-0 right-0 -mr-4 -mt-4 h-24 w-24 rounded-full bg-cyan-500/10 blur-2xl transition-all group-hover:bg-cyan-500/20" />
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-600 text-white shadow-lg shadow-cyan-600/20">
+                  <span className="font-bold text-xl">3</span>
+                </div>
+                <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white">Budsjett</h3>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Sett opp inntekter mot utgifter. Vi bruker SIFO-satser for å hjelpe deg med å beregne hva du kan betale.
+                </p>
+              </div>
+
+              {/* Step 4 */}
+              <div className="group relative overflow-hidden rounded-2xl border bg-slate-50 p-8 hover:shadow-xl transition-all duration-300 dark:bg-slate-900 dark:border-slate-800">
+                <div className="absolute top-0 right-0 -mr-4 -mt-4 h-24 w-24 rounded-full bg-teal-500/10 blur-2xl transition-all group-hover:bg-teal-500/20" />
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-teal-600 text-white shadow-lg shadow-teal-600/20">
+                  <span className="font-bold text-xl">4</span>
+                </div>
+                <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white">Dokumentasjon</h3>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Få en ryddig sjekkliste over alle vedlegg du må skaffe før du sender søknaden.
+                </p>
+              </div>
+
+              {/* Step 5 */}
               <div className="group relative overflow-hidden rounded-2xl border bg-slate-50 p-8 hover:shadow-xl transition-all duration-300 dark:bg-slate-900 dark:border-slate-800">
                 <div className="absolute top-0 right-0 -mr-4 -mt-4 h-24 w-24 rounded-full bg-emerald-500/10 blur-2xl transition-all group-hover:bg-emerald-500/20" />
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-lg shadow-emerald-600/20">
-                  <span className="font-bold text-xl">3</span>
+                  <span className="font-bold text-xl">5</span>
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white">Ferdig Søknad</h3>
+                <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white">Søknadsutkast</h3>
                 <p className="text-slate-600 dark:text-slate-400">
-                  Last ned en ferdig formatert søknad (PDF) og kreditorliste som du kan sende direkte til Namsmannen.
+                  Vi genererer selve søknadsbrevet (PDF) for deg, basert på informasjonen du har lagt inn.
                 </p>
               </div>
+
+              {/* Step 6 */}
+              <div className="group relative overflow-hidden rounded-2xl border bg-slate-50 p-8 hover:shadow-xl transition-all duration-300 dark:bg-slate-900 dark:border-slate-800">
+                <div className="absolute top-0 right-0 -mr-4 -mt-4 h-24 w-24 rounded-full bg-green-500/10 blur-2xl transition-all group-hover:bg-green-500/20" />
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-green-600 text-white shadow-lg shadow-green-600/20">
+                  <span className="font-bold text-xl">6</span>
+                </div>
+                <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white">Veien Videre</h3>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Infosenter om hvor søknaden skal sendes, og hva som skjer etter at du har levert den.
+                </p>
+              </div>
+
             </div>
           </div>
         </section>
 
         {/* Privacy Section */}
-        <section className="w-full py-20 bg-slate-900 text-white">
-          <div className="container px-4 md:px-6">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+        <section className="w-full py-20 bg-slate-900 text-white flex flex-col items-center">
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
               <div className="space-y-6">
                 <div className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-400">
                   <ShieldCheck className="mr-2 h-4 w-4" />
@@ -173,9 +210,9 @@ export default function LandingPage() {
         </section>
 
         {/* Disclaimer */}
-        <section className="w-full py-16 bg-amber-50 dark:bg-amber-950/20 border-t border-amber-100 dark:border-amber-900/30">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+        <section className="w-full py-16 bg-amber-50 dark:bg-amber-950/20 border-t border-amber-100 dark:border-amber-900/30 flex flex-col items-center">
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between max-w-5xl mx-auto">
               <div className="space-y-2 flex-1">
                 <div className="flex items-center gap-2 text-amber-700 dark:text-amber-500 font-semibold">
                   <AlertTriangle className="h-5 w-5" />
@@ -197,8 +234,8 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <footer className="py-8 bg-slate-50 dark:bg-slate-950 border-t">
-        <div className="container px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <footer className="py-8 bg-slate-50 dark:bg-slate-950 border-t flex flex-col items-center">
+        <div className="container px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4 mx-auto">
           <div className="text-sm text-slate-500">
             © 2026 Selvhjelp Gjeldsordning. Bygget med åpen kildekode.
           </div>
