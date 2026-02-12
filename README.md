@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gjeldsordning Veileder
 
-## Getting Started
+En personvernsfokusert, offline-first webapplikasjon for å hjelpe privatpersoner med søknad om gjeldsordning.
 
-First, run the development server:
+## Funksjonalitet
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. Stegvis Veileder
+Applikasjonen leder brukeren gjennom 6 logiske steg:
+1.  **Forstå ordningen**: Info og "hurtigsjekk" quiz.
+2.  **Kartlegging**: Enkel tabell for å legge inn kreditorer.
+3.  **Budsjett**: Oversikt over inntekt og utgifter med SIFO-referansetall.
+4.  **Dokumentasjon**: Sjekkliste for vedlegg.
+5.  **Søknad**: Generering av søknadstekst basert på inndata.
+6.  **Veien videre**: Informasjon om innsending og kontaktpunkter.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Personvern og Data
+- **Ingen backend**: Alt skjer i nettleseren.
+- **Lokal lagring**: Data lagres i `localStorage` så man ikke mister det ved reload.
+- **JSON Eksport/Import**: Brukere kan lagre fremgangen sin til en fil og fortsette senere.
+- **Slett data**: Mulighet for å nulle ut alt.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Dokumentgenerering
+- **PDF**: En profesjonell PDF kan lastes ned direkte fra nettleseren.
+- **Tekst**: Mulighet til å kopiere teksten til utklippstavlen.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Hvordan kjøre prosjektet
 
-## Learn More
+1.  **Start utviklingsserveren**:
+    ```bash
+    npm run dev
+    ```
+2.  **Gå til**: [http://localhost:3000](http://localhost:3000)
 
-To learn more about Next.js, take a look at the following resources:
+## Teknisk Stack
+- **Rammeverk**: Next.js 14+ (App Router)
+- **Styling**: Tailwind CSS + Shadcn UI
+- **State**: Zustand (med persist middleware)
+- **PDF**: @react-pdf/renderer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Lisens
+MIT License. Se [LICENSE](LICENSE) filen for detaljer.
